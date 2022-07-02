@@ -3,7 +3,7 @@
     "displayName": "Human Resource Machine Language support",
     "description": "Language support for the Human Resource Machine programming language",
     "version": "1.0.0",
-    "icon": "icon.ico",
+    "icon": "images/icon.png",
     "author": "Simon Sawicki <grub4k@gmx.net> (https://github.com/Grub4K)",
     "license": "MIT",
     "engines": {
@@ -26,7 +26,7 @@
                 "extensions": [
                     ".hrm"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./languages/hrm.configuration.json"
             }
         ],
         "grammars": [
