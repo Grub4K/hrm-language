@@ -1,0 +1,133 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Human Resource Machine",
+	"patterns": [
+		{
+			"include": "#expression"
+		}
+	],
+	"repository": {
+		"expression": {
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#preprocessor"
+				},
+				{
+					"include": "#label"
+				},
+				{
+					"include": "#instruction"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-dash",
+					"match": "^\\s*(--.*)"
+				},
+				{
+					"match": "^\\s*(COMMENT)\\s+(\\d+)\\s*$",
+					"captures": {
+						"1": {
+							"name": "comment.line.keyword.hrm"
+						},
+						"2": {
+							"name": "constant.numeric.hrm"
+						}
+					}
+				}
+			]
+		},
+		"label": {
+			"name": "entity.name.section.hrm",
+			"match": "^\\s*([A-Za-z0-9]+:)\\s*"
+		},
+		"instruction": {
+			"patterns": [
+				{
+					"include": "#instruction-jump"
+				},
+				{
+					"include": "#instruction-regular"
+				},
+				{
+					"include": "#instruction-argument"
+				},
+				{
+					"include": "#invalid"
+				}
+			]
+		},
+		"instruction-jump": {
+			"match": "^\\s*(JUMP[ZN]?)\\s+([A-Za-z0-9])+\\s*$",
+			"captures": {
+				"1": {
+					"name": "keyword.control.hrm"
+				},
+				"2": {
+					"name": "variable.language.hrm"
+				}
+			}
+		},
+		"instruction-regular": {
+			"match": "^\\s*(INBOX|OUTBOX)\\s*$",
+			"captures": {
+				"0": {
+					"name": "entity.name.function.hrm"
+				}
+			}
+		},
+		"instruction-argument": {
+			"match": "^\\s*(COPYFROM|COPYTO|ADD|SUB|BUMPDN|BUMPUP)\\s+(?:(\\d+)|(\\[\\d+\\]))\\s*$",
+			"captures": {
+				"1": {
+					"name": "entity.name.function.hrm"
+				},
+				"2": {
+					"name": "constant.numeric.hrm"
+				},
+				"3": {
+					"name": "constant.other.hrm"
+				}
+			}
+		},
+		"invalid": {
+			"name": "invalid.illegal.hrm",
+			"match": "[^\\s]+"
+		},
+		"preprocessor": {
+			"begin": "^\\s*(DEFINE)\\s+(COMMENT|LABEL)\\s+(\\d+)\\s+$",
+			"end": ";$",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.define.hrm"
+				},
+				"2": {
+					"name": "keyword.other.hrm"
+				},
+				"3": {
+					"name": "constant.numeric.hrm"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "meta.preprocessor"
+				}
+			},
+			"patterns": [
+				{
+					"name": "string.other.hrm",
+					"match": "^[\\nA-Za-z0-9\\+/]+(?:(?=;)|$)"
+				},
+				{
+					"include": "#invalid"
+				}
+			]
+		}
+	},
+	"scopeName": "source.hrm"
+}

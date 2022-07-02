@@ -1,0 +1,101 @@
+{
+    "Inbox": {
+        "prefix": [
+            "INBOX"
+        ],
+        "body": [
+            "INBOX"
+        ],
+        "description": "Take a tile from the input conveyor."
+    },
+    "Outbox": {
+        "prefix": [
+            "OUTBOX"
+        ],
+        "body": [
+            "OUTBOX"
+        ],
+        "description": "Put the current tile onto the output conveyor."
+    },
+    "Copy from": {
+        "prefix": [
+            "COPYFROM"
+        ],
+        "body": [
+            "COPYFROM ${0:source}"
+        ],
+        "description": "Copy a tile on the ground into the hand."
+    },
+    "Copy to": {
+        "prefix": [
+            "COPYTO"
+        ],
+        "body": [
+            "COPYTO   ${0:destination}"
+        ],
+        "description": "Copy a tile from the hand to the ground."
+    },
+    "Add": {
+        "prefix": [
+            "ADD"
+        ],
+        "body": [
+            "ADD      ${0:tile}"
+        ],
+        "description": "Add the specified tile to the tile in your hand."
+    },
+    "Subtract": {
+        "prefix": [
+            "SUB"
+        ],
+        "body": [
+            "SUB      ${0:tile}"
+        ],
+        "description": "Subtract the specified tile from the tile in your hand."
+    },
+    "Bump down": {
+        "prefix": [
+            "BUMPDN"
+        ],
+        "body": [
+            "BUMPDN   ${0:tile}"
+        ],
+        "description": "Decrement the specified tile and copy it to the hand."
+    },
+    "Bump up": {
+        "prefix": [
+            "BUMPUP"
+        ],
+        "body": [
+            "BUMPUP   ${0:tile}"
+        ],
+        "description": "Decrement the specified tile and copy it to the hand."
+    },
+    "Jump": {
+        "prefix": [
+            "JUMP"
+        ],
+        "body": [
+            "JUMP     ${0:label}"
+        ],
+        "description": "Jump to the specified label."
+    },
+    "Jump if zero": {
+        "prefix": [
+            "JUMPZ"
+        ],
+        "body": [
+            "JUMPZ    ${0:label}"
+        ],
+        "description": "Jump to the specified label if the tile in your hand is zero."
+    },
+    "Jump if negative": {
+        "prefix": [
+            "JUMPN"
+        ],
+        "body": [
+            "JUMPN    ${0:label}"
+        ],
+        "description": "Jump to the specified label if the tile in your hand is negative."
+    }
+}

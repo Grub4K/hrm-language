@@ -1,0 +1,49 @@
+{
+    "name": "hrm-language",
+    "displayName": "Human Resource Machine Language support",
+    "description": "Language support for the Human Resource Machine programming language",
+    "version": "1.0.0",
+    "icon": "icon.ico",
+    "author": "Simon Sawicki <grub4k@gmx.net> (https://github.com/Grub4K)",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "publisher": "grub4k",
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "repository": "https://github.com/Grub4k/hrm-language",
+    "contributes": {
+        "languages": [
+            {
+                "id": "hrm",
+                "aliases": [
+                    "Human Resource Machine",
+                    "hrm"
+                ],
+                "extensions": [
+                    ".hrm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "hrm",
+                "scopeName": "source.hrm",
+                "path": "./syntaxes/hrm.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "hrm",
+                "path": "./snippets/hrm.snippets.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "vsce": "^2.9.2"
+    }
+}
