@@ -63,7 +63,7 @@
 			]
 		},
 		"instruction-jump": {
-			"match": "^\\s*(JUMP[ZN]?)\\s+([A-Za-z0-9])+\\s*$",
+			"match": "^\\s*(JUMP[ZN]?)\\s+([A-Za-z0-9]+)\\s*$",
 			"captures": {
 				"1": {
 					"name": "keyword.control.hrm"
