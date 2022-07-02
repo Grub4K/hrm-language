@@ -2,7 +2,7 @@
     "name": "hrm-language",
     "displayName": "Human Resource Machine Language support",
     "description": "Language support for the Human Resource Machine programming language",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icon": "images/icon.png",
     "author": "Simon Sawicki <grub4k@gmx.net> (https://github.com/Grub4K)",
     "license": "MIT",
